@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+
+% basic packages
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{custom}
+\usepackage{lipsum}
+
+% page formatting
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\sectionmark}[1]{\markright{\textsf{\arabic{section}. #1}}}
+\renewcommand{\subsectionmark}[1]{}
+\lhead{\textbf{\thepage} \ \ \nouppercase{\rightmark}}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\setlength{\headheight}{14pt}
+
+\linespread{1.03} % give a little extra room
+\setlength{\parindent}{0.2in} % reduce paragraph indent a bit
+\setcounter{secnumdepth}{2} % no numbered subsubsections
+\setcounter{tocdepth}{2} % no subsubsections in ToC
+
+\begin{document}
+
+% make title page
+\thispagestyle{empty}
+\bigskip \
+\vspace{0.1cm}
+
+\begin{center}
+{\fontsize{22}{22} \selectfont Solutions for Linear Algebra By Ray Kunze and Kenneth Hoffman}
+\vskip 16pt
+{\fontsize{36}{36} \selectfont \bf \sffamily Solutions}
+\vskip 24pt
+{\fontsize{18}{18} \selectfont \rmfamily Vaibhav} 
+\vskip 24pt
+These are solutions for reference
+\end{center}
+
+
+% make table of contents
+\newpage
+\microtoc
+\newpage
+
+% main content
+\section{Linear Equations}
+\textbf{1.} Prove that the set of all complex numbers in the form $x + y\sqrt{2}$ is a subfield of $\mathbb{C}$\\
+
+\textbf{Proof}
+
+We will refere to this set as set \textbf{$A$}\\
+
+In order to prove this, $A$ must satisfy these constraints:
+\begin{enumerate}
+  \item{It must have a unique element 1}
+  \item{It must have a unique element 0}
+  \item{For every element $a$ there must include $-a$}
+  \item{For every element $a$ there must include $a^{-1}$}\\
+\end{enumerate}
+
+Constraint 1 is very obvious. We simply set $x$ to 1 and y to $0$ and we are fine. Constraint 2 is even easier, just set both $x$ and $y$ to 0 and the result is 0. For constraint 3, the element we are trying to get is $-(x + y\sqrt{2})$ which is $-x-y\sqrt{2}$. Based on this, since any complex value of $x$ and $y$ are in $A$, just set $x$ to $-x$ and $y$ to $-y$. For Constraint 4, $(x + y\sqrt{2})^{-1}$ is simply $x^{-1} + y^{-1} + 2^{-1/2}$. The first part of the equation is simple, just set $x$ to $1/{x}$. Then, to make $2^{1/2}$ become $2^{-1/2}$, we simply make $y$  become $1/2y$ because of $y^{-1}$ is $1/y$ and to combat $2^{1/2}$ we can multiply it by $1/2$ ($1/\sqrt{2}$ = $\sqrt{2}/2$). The final equation would be $\frac{1}{x} + \frac{\sqrt{2}}{2y}$. Thus, the set of all complex numbers in the form $x + y\sqrt{2}$ is a subfield of $\mathbb{C}$.
+\\
+
+\textbf{2.}
+Are the following systems equivalent?
+\begin{equation}
+  S_{1} = 
+  \begin{cases}
+    x_1 - x_2 = 0\\
+    2x_1 + x_2 = 0
+  \end{cases}\\
+\end{equation}
+\begin{equation}
+  S_{2} = 
+  \begin{cases}
+    3x_1 + x_2 = 0\\
+    x_1 + x_2 = 0
+  \end{cases}\\
+\end{equation}
+
+Yes, I will balance them using... systems of equations.\\
+
+$x_{1} - x_{2}$ = $(3x_1 + x_2) - 2(x_1 + x_2)$\\
+$2x_{1} + x_{2}$ = $\frac{1}{2}(3x_1 + x_2) + \frac{1}{2}(x_1 + x_2)$\\
+$3x_{1} + x_{2}$ = $\frac{1}{3}(x_1 - x_2) + \frac{4}{3}(2x_1 + x_2)$\\
+$3x_{1} + x_{2}$ = $\frac{1}{3}(x_1 - x_2) + \frac{4}{3}(2x_1 + x_2)$\\
+$3x_{1} + x_{2}$ = $-\frac{1}{3}(x_1 - x_2) + \frac{2}{3}(2x_1 + x_2)$\\
+
+\textbf{6.}
+Prove that if two homogeneous systems of linear equations in two unknowns have the same solutions, then they are equivalent.\\
+
+Note that one equation can be multiplied by a constant factor $k$ and it will remain the same (note that $k$ can be less than 0 as well as a rational number). Also note that you can add two valid equations and the result is still valid. Knowing this, any of the equations in each of the systems can be represented as $k\alpha + k\beta$, where $\alpha$ and $\beta$ are equations of the other system. Thus, they are equivalent.\\
+
+\textbf{7.}
+Prove that each subfield of $\mathbb{C}$ contains every rational number.\\
+
+Let the subfield be called $A$\\
+
+We know that if $x$, $y$ $\in$ $A$, then $x + y$, $xy$, $x$, $y$, $0$, $1$ $\in A$. This proves that every positive and negative integer exists. But there is one more rule: If $x \in A$, then $x^{-1} \in A$, which means that $\frac{1}{x} \in A$. We know that $xy \in A$, so every rational number is in $A$.
+\end{document}
