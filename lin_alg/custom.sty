@@ -286,3 +286,8 @@
 \newtheorem*{prop}{Prop}
 \newtheorem*{proofsketch}{Proof Sketch}
 \renewenvironment{proof}{\noindent {\bfseries Proof.}\,}{\medskip}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
