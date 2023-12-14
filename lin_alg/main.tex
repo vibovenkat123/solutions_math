@@ -258,6 +258,64 @@ Row reducing this echelon gives
     0 & 0
   \end{pmatrix}
 \]
+So the solutions to $AX = 0$ are ($0$, $0$)\\
 
-So the solutions to $AX = 0$ are ($0$, $0$)
+\textbf{4.}\\
+
+The matrix can be represented as
+\[
+  \begin{amatrix}{3}
+  1 & -1 & 2 & 1\\
+  2 & 0 & 2 & 1\\
+  1 & -3 & 4 & 2
+  \end{amatrix}
+\]
+
+Row reducing gives
+\[
+  \begin{amatrix}{3}
+    1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & 1 & \frac{1}{2} 
+  \end{amatrix}
+\]
+
+So the solution is $(0, 0, \frac{1}{2})$
+\newpage
+\textbf{7.}\\
+
+The matrix is
+
+\[
+  \begin{amatrix}{5}
+    2 & -3 & -7 & 5 & 2 & -2\\
+    1 & -2 & -4 & 3 & 1 & -2\\
+    2 & 0 & -4 & 2 & 1 & 3\\
+    1 & -5 & -7 & 6 & 2 & -7
+  \end{amatrix}
+\]
+
+Just with some row reduction, we soon get
+
+\[
+  \begin{amatrix}{5}
+    1 & 0 & -2 & 1 & 0 & 1\\
+    0 & 1 & 1 & -1 & 0 & 2\\
+    0 & 0 & 0 & 0 & 1 & 1\\
+    0 & 0 & 0 & 0 & 0 & 0 
+  \end{amatrix}
+\]
+
+This equation is 
+
+\begin{equation}
+  \begin{cases}
+    x_1 - 2x_3 + x_4 = 1\\
+    x_2 + x_3 - x_4 = 2\\
+    x_5 = 1
+  \end{cases}\\
+\end{equation}
+
+So the solution is $(1 + 2x_3 - x_4, 2 - x_3 + x_4, x_3, x_4, 1)$ where $x_3, x_4 \in F$
+
 \end{document}
